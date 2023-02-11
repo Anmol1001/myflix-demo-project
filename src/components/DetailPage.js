@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from './firebase/Firebase'
 import { ThreeCircles } from 'react-loader-spinner'
+import Review from './Review'
 
 const DetailPage = () => {
   const {id} = useParams();//the parameter id has come from the App.js file where we route the DetailPage.
@@ -47,6 +48,8 @@ const DetailPage = () => {
             className='mt-3'
         />
         <p className='mt-3'>{data.Description}</p>
+
+        <Review />
       
     </div>
     
@@ -56,4 +59,4 @@ const DetailPage = () => {
   )
 }
 
-export default DetailPage
+export default DetailPage;
