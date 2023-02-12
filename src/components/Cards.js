@@ -35,7 +35,7 @@ const Cards = () => {
             <span className='text-gray-500 p-2 mr-1'> Rating:</span>
             <ReactStars 
                 size={20}
-                value={5}
+                value={e.rating/e.rated}
                 edit={false}
                 half={true}
             /></h1>

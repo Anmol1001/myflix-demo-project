@@ -13,6 +13,8 @@ const DetailPage = () => {
     Year: "",
     Image: "",
     Description:"",
+    rating: 0,
+    rated: 0
     
   })
   
@@ -42,14 +44,14 @@ const DetailPage = () => {
         <h1 className='text-3xl font-bold text-gray-400'>{data.Title} <span className='text-xl'>{data.Year}</span></h1>
         <ReactStars
             size={20}
-            value={4.5}
+            value={data.rating/data.rated}
             edit={false}
             half={true}
             className='mt-3'
         />
         <p className='mt-3'>{data.Description}</p>
 
-        <Review />
+        <Review prevRating={data.rating} userRated={data.rated}/>
       
     </div>
     
