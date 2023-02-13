@@ -16,6 +16,7 @@ const Review = ({ prevRating, userRated}) => {
     const [reviewLoading, setReviewLoading] = useState(false)
     const [input, setInput] = useState('')
     const [data, setData] = useState([])
+    const [newAdded, setNewAdded] = useState(0);
 
    
     
@@ -46,6 +47,7 @@ const Review = ({ prevRating, userRated}) => {
             })
             setRating(0)
             setInput('')
+            setNewAdded(newAdded + 1);
         }else{
             navigate('/login');
         }
@@ -80,7 +82,7 @@ const Review = ({ prevRating, userRated}) => {
         }
       getData();
         
-      }, [])
+      }, [newAdded])
 
   return (
     <div className='mt-4 border-t-2 border-gray-700 w-full'>
